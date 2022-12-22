@@ -13,5 +13,6 @@ namespace MovieAddictPro.Data
 
         public DbSet<Collection> Collection { get; set; } = default!;
         public DbSet<Movie> Movie { get; set; } = default!;
+        public DbSet<MovieCollection> MovieCollection { get; set; } = default!;
     }
 }

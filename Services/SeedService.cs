@@ -59,8 +59,11 @@ namespace MovieAddictPro.Services
                 EmailConfirmed = true
             };
 
-            await _userManager.CreateAsync(newUser, credentials.Password);
-            await _userManager.AddToRoleAsync(newUser, credentials.Role);
+            var creationResult = await _userManager.CreateAsync(newUser, credentials.Password);
+            if (creationResult.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(newUser, credentials.Role);
+            }
         }
 
         private async Task SeedCollectionsAsync()
