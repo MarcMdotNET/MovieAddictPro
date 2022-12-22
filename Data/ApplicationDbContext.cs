@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MovieAddictPro.Models.Database;
 
 namespace MovieAddictPro.Data
 {
@@ -9,5 +10,7 @@ namespace MovieAddictPro.Data
             : base(options)
         {
         }
+
+        public DbSet<Collection> Collection { get; set; } = default!;
     }
 }
