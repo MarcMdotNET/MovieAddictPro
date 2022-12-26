@@ -1,8 +1,13 @@
 ﻿@using MovieAddictPro.Models.ViewModels
+@using MovieAddictPro.Services.Interfaces
+@using System.Text.RegularExpressions
+@inject IImageService _imageService;
 @model LandingPageVM
 
 @{
     ViewData["Title"] = "Movie Addict Pro";
+    var rgx = new Regex("[^a-zA-Z0-9]");
+}
 }
 
 <style>
